@@ -1,0 +1,49 @@
+name: phone_text_form_field
+description: "A new Flutter project."
+version: 0.0.1
+homepage: https://github.com/Moeed366/
+
+environment:
+  sdk: '>=3.4.3 <4.0.0'
+  flutter: '>=3.3.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_web_plugins:
+    sdk: flutter
+  json_annotation: ^4.8.1
+  flutter_multi_formatter: ^2.12.4
+  country_flags: ^2.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter packages.
+flutter:
+
+  plugin:
+    platforms:
+      android:
+        package: com.mixtm.phone_text_form_field
+        pluginClass: PhoneTextFormFieldPlugin
+      ios:
+        pluginClass: PhoneTextFormFieldPlugin
+      linux:
+        pluginClass: PhoneTextFormFieldPlugin
+      macos:
+        pluginClass: PhoneTextFormFieldPlugin
+      windows:
+        pluginClass: PhoneTextFormFieldPluginCApi
+      web:
+        pluginClass: PhoneTextFormFieldWeb
+        fileName: phone_text_form_field_web.dart
+
+  assets:
+    - assets/
+    - assets/countries/
