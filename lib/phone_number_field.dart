@@ -8,6 +8,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_multi_formatter/flutter_multi_formatter.dart';
+import 'package:phone_text_form_field/view/mi_textfield.dart';
 
 import 'models/country_code_model.dart';
 import 'models/country_config.dart';
@@ -16,7 +17,6 @@ import 'models/phone_config.dart';
 import 'util/general_util.dart';
 import 'view/country_code_bottom_sheet.dart';
 import 'view/flag_view.dart';
-import 'view/rixa_textfield.dart';
 
 export 'package:flutter_multi_formatter/formatters/masked_input_formatter.dart';
 
@@ -25,7 +25,7 @@ export 'models/country_config.dart';
 export 'models/dialog_config.dart';
 export 'models/phone_config.dart';
 
-class InternationalPhoneNumberTextField extends StatefulWidget {
+class InternationalPhoneFormField extends StatefulWidget {
   final TextEditingController controller;
   final double? height;
   final bool inactive;
@@ -34,18 +34,17 @@ class InternationalPhoneNumberTextField extends StatefulWidget {
   final PhoneConfig phoneConfig;
   final CountryCodeModel initCountry;
   final dynamic Function(IntPhoneNumber number)? onInputChanged;
-  final double betweenPadding;
+
   final MaskedInputFormatter? formatter;
   final List<TextInputFormatter> inputFormatters;
   final Future<String?> Function()? loadFromJson;
   final String? Function(IntPhoneNumber number)? validator;
-  InternationalPhoneNumberTextField(
+  InternationalPhoneFormField(
       {super.key,
       TextEditingController? controller,
-      this.height = 60,
+      this.height = 50,
       this.inputFormatters = const [],
       CountryCodeModel? initCountry,
-      this.betweenPadding = 23,
       this.onInputChanged,
       this.loadFromJson,
       this.formatter,
@@ -63,12 +62,12 @@ class InternationalPhoneNumberTextField extends StatefulWidget {
         phoneConfig = phoneConfig ?? PhoneConfig();
 
   @override
-  State<InternationalPhoneNumberTextField> createState() =>
-      _InternationalPhoneNumberTextFieldState();
+  State<InternationalPhoneFormField> createState() =>
+      _InternationalPhoneFormFieldState();
 }
 
-class _InternationalPhoneNumberTextFieldState
-    extends State<InternationalPhoneNumberTextField> {
+class _InternationalPhoneFormFieldState
+    extends State<InternationalPhoneFormField> {
   List<CountryCodeModel>? countries;
   late CountryCodeModel selected;
 
@@ -129,7 +128,7 @@ class _InternationalPhoneNumberTextFieldState
           height: widget.height,
           child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Expanded(
-                flex: 10,
+                flex: 7,
                 child: SizedBox(
                   height: widget.height,
                   child: TextButton(
@@ -195,10 +194,10 @@ class _InternationalPhoneNumberTextFieldState
                     ),
                   ),
                 )),
-            SizedBox(width: widget.betweenPadding),
+            SizedBox(width: 12),
             Expanded(
                 flex: 18,
-                child: RixaTextField(
+                child: MiTextField(
                   validator: (p0) {
                     if (p0!.isEmpty) {
                       return "Enter valid phone number";

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../models/country_code_model.dart';
 import '../models/dialog_config.dart';
 import 'country_widget.dart';
-import 'rixa_textfield.dart';
+import 'mi_textfield.dart';
 
 class CountryCodeBottomSheet extends StatefulWidget {
   final List<CountryCodeModel> countries;
@@ -56,7 +56,7 @@ class _CountryCodeBottomSheetState extends State<CountryCodeBottomSheet> {
                 style: widget.dialogConfig.titleStyle,
               ),
               const SizedBox(height: 14),
-              RixaTextField(
+              MiTextField(
                 hintText: widget.dialogConfig.searchHintText,
                 controller: searchController,
                 textStyle: widget.dialogConfig.searchBoxTextStyle,

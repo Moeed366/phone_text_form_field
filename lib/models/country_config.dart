@@ -8,11 +8,11 @@ class CountryConfig {
   double flagSize;
   CountryConfig({
     this.noFlag = false,
-    this.flagSize = 30,
+    this.flagSize = 25,
     this.flatFlag = false,
     Decoration? decoration,
     this.textStyle = const TextStyle(
-        color: Colors.black, fontSize: 16, fontWeight: FontWeight.w600),
+        color: Colors.black, fontSize: 16, fontWeight: FontWeight.w500),
   }) : decoration = decoration ??
             BoxDecoration(
               border: Border.all(width: 2, color: const Color(0xFF3f4046)),

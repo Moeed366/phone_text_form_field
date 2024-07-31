@@ -228,7 +228,3 @@ Future<String> loadFromJson() async {
 
 See the `example` file for a more detailed example
 
-
-## To Contribute
-* If you **found a bug** or **have a feature request**, open an issue.
-* If you **want to contribute**, submit a pull request.

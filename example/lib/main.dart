@@ -11,29 +11,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowMaterialGrid: false,
       debugShowCheckedModeBanner: false,
-      home: Home(),
-    );
-  }
-}
-
-class Home extends StatelessWidget {
-  const Home({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        ElevatedButton(
-            onPressed: () {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => LoginScreen()));
-            },
-            child: Text('LoginScreen')),
-      ],
+      home: LoginScreen(),
     );
   }
 }
@@ -54,7 +35,7 @@ class LoginScreen extends StatelessWidget {
         child: Form(
           key: _formKey,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               TextFormField(
                 decoration: InputDecoration(labelText: 'Username'),
@@ -65,23 +46,23 @@ class LoginScreen extends StatelessWidget {
                   return null;
                 },
               ),
-              InternationalPhoneNumberTextField(
-                height: 60,
+              InternationalPhoneFormField(
+                // height: 60,
                 controller: controller,
                 inputFormatters: const [],
                 formatter: MaskedInputFormatter('### ### ## ##'),
                 initCountry: CountryCodeModel(
                     name: "United States", dial_code: "+1", code: "US"),
-                betweenPadding: 23,
                 onInputChanged: (phone) {
                   print(phone.code);
-                  print(phone.dial_code);
+                  print(
+                      'complete phone number' + phone.dial_code + phone.number);
                   print(phone.number);
                   print(phone.rawFullNumber);
                   print(phone.rawNumber);
                   print(phone.rawDialCode);
                 },
-                dialogConfig: DialogConfig(
+                /*       dialogConfig: DialogConfig(
                   backgroundColor: const Color(0xFF444448),
                   searchBoxBackgroundColor: const Color(0xFF56565a),
                   searchBoxIconColor: const Color(0xFFFAFAFA),
@@ -125,14 +106,14 @@ class LoginScreen extends StatelessWidget {
                     textStyle: const TextStyle(
                         color: Colors.black,
                         fontSize: 16,
-                        fontWeight: FontWeight.w600)),
-                validator: (number) {
+                        fontWeight: FontWeight.w600)),*/
+                /*  validator: (number) {
                   if (number.number.isEmpty) {
                     return "The phone number cannot be left emptyssss";
                   }
                   return null;
-                },
-                phoneConfig: PhoneConfig(
+                },*/
+                /*   phoneConfig: PhoneConfig(
                   focusedColor: const Color(0xFF6D59BD),
                   enabledColor: const Color(0xFF6D59BD),
                   errorColor: const Color(0xFFFF5494),
@@ -162,7 +143,7 @@ class LoginScreen extends StatelessWidget {
                       color: Colors.black.withOpacity(0.5),
                       fontSize: 16,
                       fontWeight: FontWeight.w400),
-                ),
+                ),*/
               ),
               TextFormField(
                 decoration: InputDecoration(labelText: 'Password'),

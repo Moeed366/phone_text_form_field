@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class DialogConfig {
+class BottomsheetConfig {
   Color backgroundColor,
       searchBoxBackgroundColor,
       searchBoxIconColor,
@@ -12,14 +12,14 @@ class DialogConfig {
   double countryItemHeight, itemFlagSize;
   bool flatFlag;
   String title, searchHintText;
-  DialogConfig({
-    this.backgroundColor = const Color(0xFF444448),
-    this.searchBoxBackgroundColor = const Color(0xFF56565a),
-    this.searchBoxIconColor = const Color(0xFFFAFAFA),
+  BottomsheetConfig({
+    this.backgroundColor = const Color(0xFFFDFDFD),
+    this.searchBoxBackgroundColor = const Color(0xffdcdcdc),
+    this.searchBoxIconColor = const Color(0xFF000000),
     this.countryItemHeight = 55,
     this.itemFlagSize = 30,
     this.flatFlag = false,
-    this.selectedItemColor = const Color(0xFF56565a),
+    this.selectedItemColor = const Color(0xffd7d5d5),
     this.topBarColor = const Color(0xFF1B1C24),
     this.searchBoxRadius = 7,
     this.title = "Country Codes",
@@ -31,22 +31,22 @@ class DialogConfig {
     TextStyle? searchBoxHintStyle,
   })  : textStyle = textStyle ??
             TextStyle(
-                color: const Color(0xFFFAFAFA).withOpacity(0.7),
+                color: const Color(0xFF070707).withOpacity(0.7),
                 fontSize: 14,
                 fontWeight: FontWeight.w600),
         searchBoxTextStyle = searchBoxTextStyle ??
             TextStyle(
-                color: const Color(0xFFFAFAFA).withOpacity(0.7),
+                color: const Color(0xFF000000).withOpacity(0.7),
                 fontSize: 14,
                 fontWeight: FontWeight.w600),
         titleStyle = titleStyle ??
             const TextStyle(
-                color: Color(0xFFFAFAFA),
+                color: Color(0xFF000000),
                 fontSize: 18,
                 fontWeight: FontWeight.w700),
         searchBoxHintStyle = searchBoxHintStyle ??
             TextStyle(
-                color: const Color(0xFFFAFAFA).withOpacity(0.7),
+                color: const Color(0xFF000000).withOpacity(0.7),
                 fontSize: 14,
                 fontWeight: FontWeight.w600),
         selectedIcon = selectedIcon ??

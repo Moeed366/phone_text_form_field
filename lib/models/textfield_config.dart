@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class PhoneConfig {
+class TextFieldConfig {
   Color focusedColor, enabledColor, errorColor;
   TextStyle textStyle, hintStyle;
   double radius, borderWidth;
@@ -17,9 +17,9 @@ class PhoneConfig {
   AutovalidateMode autovalidateMode;
   final TextStyle? floatingLabelStyle;
   final TextInputAction textInputAction;
-  PhoneConfig(
-      {this.focusedColor = const Color(0xFF6D59BD),
-      this.enabledColor = const Color(0xFF6D59BD),
+  TextFieldConfig(
+      {this.focusedColor = const Color(0xFF000000),
+      this.enabledColor = const Color(0xFF000000),
       this.errorPadding = const EdgeInsets.only(top: 14),
       this.radius = 8,
       this.autovalidateMode = AutovalidateMode.onUserInteraction,
@@ -33,8 +33,8 @@ class PhoneConfig {
       this.popUpErrorText = true,
       this.autoFocus = false,
       this.showCursor = false,
-      this.errorColor = const Color(0xFFFF5494),
-      this.errorStyle = const TextStyle(color: Color(0xFFFF5494), fontSize: 12),
+      this.errorColor = const Color(0xFFFF0000),
+      this.errorStyle = const TextStyle(color: Color(0xFFFF0000), fontSize: 12),
       this.floatingLabelStyle,
       this.labelStyle,
       this.labelText,
