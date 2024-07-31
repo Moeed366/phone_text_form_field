@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../models/bottomsheet_config.dart';
 import '../models/country_code_model.dart';
-import '../models/dialog_config.dart';
 import 'country_widget.dart';
 import 'mi_textfield.dart';
 
@@ -9,7 +9,7 @@ class CountryCodeBottomSheet extends StatefulWidget {
   final List<CountryCodeModel> countries;
   final Function(CountryCodeModel countryCodeModel) onSelected;
   final CountryCodeModel? selected;
-  final DialogConfig dialogConfig;
+  final BottomsheetConfig dialogConfig;
   const CountryCodeBottomSheet(
       {super.key,
       required this.countries,

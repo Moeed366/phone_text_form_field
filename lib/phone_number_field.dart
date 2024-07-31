@@ -10,28 +10,28 @@ import 'package:flutter/services.dart';
 import 'package:flutter_multi_formatter/flutter_multi_formatter.dart';
 import 'package:phone_text_form_field/view/mi_textfield.dart';
 
+import 'models/bottomsheet_config.dart';
 import 'models/country_code_model.dart';
 import 'models/country_config.dart';
-import 'models/dialog_config.dart';
-import 'models/phone_config.dart';
+import 'models/textfield_config.dart';
 import 'util/general_util.dart';
 import 'view/country_code_bottom_sheet.dart';
 import 'view/flag_view.dart';
 
 export 'package:flutter_multi_formatter/formatters/masked_input_formatter.dart';
 
+export 'models/bottomsheet_config.dart';
 export 'models/country_code_model.dart';
 export 'models/country_config.dart';
-export 'models/dialog_config.dart';
-export 'models/phone_config.dart';
+export 'models/textfield_config.dart';
 
 class InternationalPhoneFormField extends StatefulWidget {
   final TextEditingController controller;
   final double? height;
   final bool inactive;
-  final DialogConfig dialogConfig;
+  final BottomsheetConfig dialogConfig;
   final CountryConfig countryConfig;
-  final PhoneConfig phoneConfig;
+  final TextFieldConfig phoneConfig;
   final CountryCodeModel initCountry;
   final dynamic Function(IntPhoneNumber number)? onInputChanged;
 
@@ -50,16 +50,16 @@ class InternationalPhoneFormField extends StatefulWidget {
       this.formatter,
       this.validator,
       this.inactive = false,
-      DialogConfig? dialogConfig,
+      BottomsheetConfig? dialogConfig,
       CountryConfig? countryConfig,
-      PhoneConfig? phoneConfig})
-      : dialogConfig = dialogConfig ?? DialogConfig(),
+      TextFieldConfig? phoneConfig})
+      : dialogConfig = dialogConfig ?? BottomsheetConfig(),
         controller = controller ?? TextEditingController(),
         countryConfig = countryConfig ?? CountryConfig(),
         initCountry = initCountry ??
             CountryCodeModel(
                 name: "United States", dial_code: "+1", code: "US"),
-        phoneConfig = phoneConfig ?? PhoneConfig();
+        phoneConfig = phoneConfig ?? TextFieldConfig();
 
   @override
   State<InternationalPhoneFormField> createState() =>
@@ -125,7 +125,7 @@ class _InternationalPhoneFormFieldState
     return Column(
       children: [
         SizedBox(
-          height: widget.height,
+          height: widget.height!,
           child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Expanded(
                 flex: 7,

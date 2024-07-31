@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+
+import '../models/bottomsheet_config.dart';
 import '../models/country_code_model.dart';
-import '../models/dialog_config.dart';
 import 'flag_view.dart';
 
 class CountryWidget extends StatelessWidget {
   final CountryCodeModel countryCodeModel;
-  final DialogConfig dialogConfig;
+  final BottomsheetConfig dialogConfig;
   final bool isSelected;
   const CountryWidget(
       {required this.countryCodeModel,

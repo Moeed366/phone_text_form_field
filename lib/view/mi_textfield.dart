@@ -123,6 +123,7 @@ class MiTextField extends StatelessWidget {
               borderRadius: BorderRadius.circular(radius)),
       padding: padding,
       child: TextFormField(
+        autovalidateMode: AutovalidateMode.onUserInteraction,
         validator: validator,
         controller: controller,
         maxLines: !expands ? maxLines : null,

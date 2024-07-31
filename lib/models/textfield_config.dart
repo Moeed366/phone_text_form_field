@@ -34,7 +34,8 @@ class TextFieldConfig {
       this.autoFocus = false,
       this.showCursor = false,
       this.errorColor = const Color(0xFFFF0000),
-      this.errorStyle = const TextStyle(color: Color(0xFFFF0000), fontSize: 12),
+      this.errorStyle =
+          const TextStyle(color: Color(0xFFFF0000), fontSize: 12, height: 0.1),
       this.floatingLabelStyle,
       this.labelStyle,
       this.labelText,
