@@ -10,7 +10,7 @@
 
 ## Demo
 
-<img src="https://github.com/user-attachments/assets/98215c69-5a81-4455-b878-139f9d14077c" >
+<img src="https://github.com/user-attachments/assets/98215c69-5a81-4455-b878-139f9d14077c.gif" >
 
 # Usage
 InternationalPhoneNumberInput
