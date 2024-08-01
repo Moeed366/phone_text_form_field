@@ -10,7 +10,7 @@
 
 ## Demo
 
-![Alt text](https://github.com/Moeed366/phone_text_form_field/text_form_fied.gif)
+<img src="https://github.com/user-attachments/assets/98215c69-5a81-4455-b878-139f9d14077c" >
 
 # Usage
 InternationalPhoneNumberInput
