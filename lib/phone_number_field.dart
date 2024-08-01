@@ -194,7 +194,7 @@ class _InternationalPhoneFormFieldState
                     ),
                   ),
                 )),
-            SizedBox(width: 12),
+            const SizedBox(width: 12),
             Expanded(
                 flex: 18,
                 child: MiTextField(
