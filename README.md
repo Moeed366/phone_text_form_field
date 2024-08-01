@@ -1,9 +1,16 @@
 
 # phone_text_form_field
 
-A customised Flutter TextFormField to input international phone number along with the country code.
+<div style="height:6px;"></div>
 
-<img src="https://raw.githubusercontent.com/FlutterWay/files/main/phone_text_form_field/intl_phone_number_slayt_new.png"/>
+<div style="height:32px;"></div>
+
+![](https://github.com/Moeed366/images/assets/101408316/d39904f4-9417-4c8b-919c-bc8c31c9079d)
+
+
+## Demo
+
+![Alt text](text_form_fied.gif)
 
 # Usage
 InternationalPhoneNumberInput
