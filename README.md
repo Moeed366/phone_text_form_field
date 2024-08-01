@@ -149,29 +149,6 @@ print(phone.rawNumber);     //5531428874
 print(phone.rawDialCode);   //1
 ```
 
-## Load JSON data
-You can fetch the country codes from your own json file and upload them to the package.<br></br>
-For that, you must fill your json file with a certain format. Example on this:
-
-```json
-[
-    {
-        "name": "Aland Islands",
-        "dial_code": "+358",
-        "code": "AX"
-    },
-    {
-        "name": "Albania",
-        "dial_code": "+355",
-        "code": "AL"
-    },
-    {
-        "name": "Algeria",
-        "dial_code": "+213",
-        "code": "DZ"
-    }
-]
-```
 
 
 See the `example` file for a more detailed example
