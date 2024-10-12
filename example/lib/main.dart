@@ -46,7 +46,7 @@ class LoginScreen extends StatelessWidget {
                   return null;
                 },
               ),
-              InternationalPhoneFormField(
+              InternationalPhoneFormField(enable: false,
                 // height: 60,
                 controller: controller,
                 inputFormatters: const [],

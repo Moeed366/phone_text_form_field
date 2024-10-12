@@ -77,7 +77,7 @@ class _CountryCodeBottomSheetState extends State<CountryCodeBottomSheet> {
                 },
                 isUnderline: false,
                 noInputBorder: true,
-                backgroundColor: widget.dialogConfig.searchBoxBackgroundColor,
+                backgroundColor: widget.dialogConfig.searchBoxBackgroundColor, enable: true,
               ),
             ]),
           ),

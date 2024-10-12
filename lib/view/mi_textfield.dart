@@ -24,6 +24,7 @@ class MiTextField extends StatelessWidget {
   final EdgeInsetsGeometry? innerPadding;
   final InputBorder? enabledBorder, focusedBorder;
   final bool autoFocus;
+  final bool enable;
   final List<TextInputFormatter> inputFormatters;
   final FocusNode? focusNode;
   final Decoration? decoration;
@@ -35,7 +36,7 @@ class MiTextField extends StatelessWidget {
   final TextStyle? floatingLabelStyle;
   final TextInputAction textInputAction;
   MiTextField({
-    super.key,
+    super.key,required this.enable,
     required this.hintText,
     required this.controller,
     this.maxLines = 1,
@@ -122,7 +123,7 @@ class MiTextField extends StatelessWidget {
               color: backgroundColor,
               borderRadius: BorderRadius.circular(radius)),
       padding: padding,
-      child: TextFormField(
+      child: TextFormField(enabled: enable,
         autovalidateMode: AutovalidateMode.onUserInteraction,
         validator: validator,
         controller: controller,
@@ -146,7 +147,7 @@ class MiTextField extends StatelessWidget {
             contentPadding: innerPadding,
             hintStyle: hintStyle,
             enabledBorder: enabledBorder,
-            focusedBorder: focusedBorder,
+            focusedBorder: focusedBorder,disabledBorder: enabledBorder,
             labelText: labelText,
             labelStyle: labelStyle,
             errorMaxLines: errorMaxLines,

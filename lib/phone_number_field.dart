@@ -34,13 +34,13 @@ class InternationalPhoneFormField extends StatefulWidget {
   final TextFieldConfig phoneConfig;
   final CountryCodeModel initCountry;
   final dynamic Function(IntPhoneNumber number)? onInputChanged;
-
+  bool enable;
   final MaskedInputFormatter? formatter;
   final List<TextInputFormatter> inputFormatters;
   final Future<String?> Function()? loadFromJson;
   final String? Function(IntPhoneNumber number)? validator;
   InternationalPhoneFormField(
-      {super.key,
+      {super.key,this.enable=true,
       TextEditingController? controller,
       this.height = 50,
       this.inputFormatters = const [],
@@ -131,8 +131,8 @@ class _InternationalPhoneFormFieldState
                 flex: 7,
                 child: SizedBox(
                   height: widget.height,
-                  child: TextButton(
-                    onPressed: () {
+                  child: ElevatedButton(
+                    onPressed: () {if(widget.enable){
                       if (!widget.inactive && countries != null) {
                         showModalBottomSheet(
                             shape: const RoundedRectangleBorder(
@@ -165,7 +165,29 @@ class _InternationalPhoneFormFieldState
                                 ),
                               );
                             });
-                      }
+                      }}else{
+ ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar( behavior: SnackBarBehavior.floating,duration: Duration(seconds: 1),
+                          shape: RoundedRectangleBorder(
+                           borderRadius: BorderRadius.all(Radius.circular(20))
+                          ),
+                          content: Flex(
+                            direction: Axis.horizontal,
+                            children: [
+                              Padding(
+                                  padding:
+                                  EdgeInsets.only(right: 12),
+                                  child:
+                                  Icon(Icons.error_outline,color: Colors.white,)
+                              ),
+                              Text(
+                                "Editing disabled",
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
+                    }
                     },
                     style: TextButton.styleFrom(
                       minimumSize: Size.zero,
@@ -204,7 +226,7 @@ class _InternationalPhoneFormFieldState
                     } else {
                       return null;
                     }
-                  },
+                  },enable:widget.enable ,
                   hintText: widget.phoneConfig.hintText ?? "",
                   hintStyle: widget.phoneConfig.hintStyle,
                   textStyle: widget.phoneConfig.textStyle,
